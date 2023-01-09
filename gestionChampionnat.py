@@ -80,10 +80,11 @@ class GestionChampionnat:
                 championnat.afficher_classement()
 
     def afficherChampionnat(self):
+        print("============================")
         print("Liste des championnats : ")
+        print("============================")
         for championnat in self.championnats:
             print(championnat.afficher())
-        print("")
 
 #TESTS
 #CHAMPINNAT****************
@@ -103,6 +104,11 @@ equipe3 = Equipe(3, "OM", "16/01/2002", "Stade 3", "Rayan", "Leon")
 equipe4 = Equipe(4, "PSG", "18/10/1995", "Stade 4", "Fred", "Marie Curie")
 
 championnat1.ajouterEquipe(equipe1)
+championnat1.ajouterEquipe(equipe2)
+championnat2.ajouterEquipe(equipe3)
+championnat2.ajouterEquipe(equipe4)
+championnat3.ajouterEquipe(equipe3)
+championnat3.ajouterEquipe(equipe1)
 """
 championnat.ajouterEquipe(equipe1, championnat1)
 championnat.ajouterEquipe(equipe2, championnat1)
@@ -119,6 +125,11 @@ match5 = Match(1, 1, 1, equipe3, equipe1)
 match6 = Match(1, 3, 1, equipe1, equipe3)
 
 championnat1.ajouterMatch(match1)
+championnat1.ajouterMatch(match2)
+championnat2.ajouterMatch(match3)
+championnat2.ajouterMatch(match4)
+championnat3.ajouterMatch(match5)
+championnat3.ajouterMatch(match6)
 """
 championnat1 = championnat.ajouterMatch(match2)
 championnat2 = championnat.ajouterMatch(match3)

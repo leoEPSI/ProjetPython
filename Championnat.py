@@ -32,7 +32,8 @@ class Championnat:
             match.equipe2.ajoutMatch(mNul = 1)
 
     def afficher(self):
-        print("Fonction afficher")
+        print("Nom : ", self.nom)
+        print("Date de début / fin : ", self.date_debut, " / ", self.date_fin, "\n")
     
     def afficher_classement(self):
         print("Classement")
