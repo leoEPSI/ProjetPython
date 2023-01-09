@@ -36,12 +36,10 @@ class GestionChampionnat:
         
         championnatIndex = self.rechercheChampionnat(championnat) 
         if championnatIndex != None:
-            self.ajouterEquipe(equipe, championnatIndex)
+            self.championnats[championnatIndex].ajouterEquipe(equipe)
         else:
             print("Championnat inexistant")
 
-    def ajouterEquipe(self, equipe, championnatIndex):
-            self.championnats[championnatIndex].equipes.append(equipe)        
     ###########################################
     
     # MATCH ###########################################  
@@ -53,12 +51,10 @@ class GestionChampionnat:
         
         championnatIndex = self.rechercheChampionnat(championnat) 
         if championnatIndex != None:
-            self.ajouterMatch(match, championnatIndex)
+            self.championnats[championnatIndex].ajouterMatch(match)
         else:
             print("Championnat inexistant")
         
-    def ajouterMatch(self, match, championnatIndex):
-        self.championnats[championnatIndex].matchs.append(match)   
     ###########################################
     
     # retourne index du championnat et si pas trouvé retourne none
@@ -106,13 +102,15 @@ equipe2 = Equipe(2, "OL", "05/09/1977", "Stade 2", "Theo", "Lucas")
 equipe3 = Equipe(3, "OM", "16/01/2002", "Stade 3", "Rayan", "Leon")
 equipe4 = Equipe(4, "PSG", "18/10/1995", "Stade 4", "Fred", "Marie Curie")
 
+championnat1.ajouterEquipe(equipe1)
+"""
 championnat.ajouterEquipe(equipe1, championnat1)
 championnat.ajouterEquipe(equipe2, championnat1)
 championnat.ajouterEquipe(equipe3, championnat2)
 championnat.ajouterEquipe(equipe4, championnat2)
 championnat.ajouterEquipe(equipe3, championnat3)
 championnat.ajouterEquipe(equipe1, championnat3)
-
+"""
 match1 = Match(15, 2, 1, equipe1, equipe2)
 match2 = Match(2, 2, 1, equipe2, equipe1)
 match3 = Match(3, 2, 1, equipe3, equipe4)
@@ -120,13 +118,14 @@ match4 = Match(1, 2, 1, equipe4, equipe3)
 match5 = Match(1, 1, 1, equipe3, equipe1)
 match6 = Match(1, 3, 1, equipe1, equipe3)
 
-championnat1 = championnat.ajouterMatch(match1)
+championnat1.ajouterMatch(match1)
+"""
 championnat1 = championnat.ajouterMatch(match2)
 championnat2 = championnat.ajouterMatch(match3)
 championnat2 = championnat.ajouterMatch(match4)
 championnat3 = championnat.ajouterMatch(match5)
 championnat3 = championnat.ajouterMatch(match6)
-
+"""
 championnat.afficherChampionnat()
 
 championnat.afficherClassement("Coupe du monde 2002")

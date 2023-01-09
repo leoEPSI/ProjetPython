@@ -15,11 +15,18 @@ class Championnat:
         self.equipes = []
         self.matchs = []
     
-    def afficher():
+    def afficher(self):
         print("Fonction afficher")
     
-    def afficher_classement():
-        print("Afficher Classement")
-    
-    def calculer_point():
+    def afficher_classement(self):
+        print("Classement")
+        print("\t\t Pts \t Joués \t Gagné \t Nul \t Perdu")
+        
+    def calculer_point(self):
         print("Calculer point")
+        
+    def ajouterEquipe(self, equipe):
+        self.equipes.append(equipe)
+        
+    def ajouterMatch(self, match):
+        self.matchs.append(match)
