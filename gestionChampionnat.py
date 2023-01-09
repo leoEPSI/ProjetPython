@@ -10,7 +10,7 @@ class GestionChampionnat:
         self.point_lose = point_lose
         self.ex_aequo = ex_aequo
         
-    def menu(self):
+    def menu():
         print("1. Afficher les championnats")
         print("2. Ajouter un championnat")
         print("3. Ajouter une équipe à un championnat")
@@ -51,7 +51,7 @@ class GestionChampionnat:
             print(championnat)
 
     choix = 0
-    while choix != 7:
+    while choix != 5:
         menu()
         choix = int(input("Choix : "))
 
