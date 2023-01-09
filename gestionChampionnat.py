@@ -42,14 +42,6 @@ class GestionChampionnat:
     def afficherChampionnat(self):
         for championnat in self.championnats:
             print(championnat)
-        
-    def afficherEquipes(self):
-        for equipe in self.championnats:
-            equipe.afficher()
-            
-    def afficherClassement(self):
-        for equipe in self.championnats:
-            equipe.afficher()
 
     choix = 0
     while choix != 7:
