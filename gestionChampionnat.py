@@ -2,6 +2,13 @@ class GestionChampionnat:
     
     def __init__(self, nom, pays, nb_equipes, point_win, point_nul, point_lose, ex_aequo):
         self.championnats = []
+        self.nom = nom
+        self.pays = pays
+        self.nb_equipes = nb_equipes
+        self.point_win = point_win
+        self.point_nul = point_nul
+        self.point_lose = point_lose
+        self.ex_aequo = ex_aequo
         
     def menu(self):
         print("1. Afficher les championnats")
