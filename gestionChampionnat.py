@@ -1,4 +1,7 @@
+from equipe import Equipe
+
 class GestionChampionnat:
+    idEquipe = 0
     
     def __init__(self, nom, pays, nb_equipes, point_win, point_nul, point_lose, ex_aequo):
         self.championnats = []
@@ -20,8 +23,21 @@ class GestionChampionnat:
         point_lose = int(input("Points pour une défaite : "))
         print(nom, pays, nb_equipes, point_win, point_nul, point_lose)
     
-    def ajouterEquipe(self, equipe):
-        self.championnats.append(equipe)
+    def ajouterEquipe(self):
+        equipe = Equipe(self.idEquipe, str(input("Nom de l'équipe : ")), str(input("Date de création : ")), str(input("Stade : ")), str(input("Entraineur : ")), str(input("Président : ")))
+        self.idEquipe += 1
+        championna = str(input("nom du championnat"))
+    
+        if championna == self.rechercheChampionnat():
+            self.championnats.append(equipe)
+        else:
+            print("Championnat inexistant")
+        
+    def rechercheChampionnat(self, nomChampionnat):
+        for championnat in self.championnats:
+            if championnat.nom == nomChampionnat:
+                return True
+        return False
         
     def ajouterMatch(self, match):
         self.championnats.append(match)
