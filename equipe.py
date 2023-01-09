@@ -7,6 +7,9 @@ class Equipe:
         self.stade = stade
         self.entraineur = entraineur
         self.president = president
+        self.mGagne = 0
+        self.mNul = 0
+        self.mPerdu = 0
     
     def afficher(self):
         print("Equipe: ", self.nom)
@@ -14,3 +17,8 @@ class Equipe:
         print("Stade: ", self.stade)
         print("Entraineur: ", self.entraineur)
         print("Président: ", self.president, "\n")
+        
+    def ajoutMatch(self, mGagne = 0, mNul = 0, mPerdu = 0):
+        self.mGagne += mGagne
+        self.mNul += mNul
+        self.mPerdu += mPerdu

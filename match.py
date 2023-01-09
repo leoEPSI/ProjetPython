@@ -5,7 +5,5 @@ class Match:
         self.score_equipe1 = int(score_equipe1)
         self.score_equipe2 = int(score_equipe2)
         self.numero_journee = int(numero_journee)
-        self.equipe1 = str(equipe1)
-        self.equipe2 = str(equipe2)
-        
-        
+        self.equipe1 = equipe1
+        self.equipe2 = equipe2
