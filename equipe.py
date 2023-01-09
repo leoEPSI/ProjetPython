@@ -13,4 +13,4 @@ class Equipe:
         print("Date de création: ", self.date_creation)
         print("Stade: ", self.stade)
         print("Entraineur: ", self.entraineur)
-        print("Président: ", self.president, "\n") 
+        print("Président: ", self.president, "\n")

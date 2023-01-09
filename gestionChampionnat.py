@@ -25,32 +25,48 @@ class GestionChampionnat:
         point_lose = int(input("Points pour une défaite : "))
         print(nom, pays, nb_equipes, point_win, point_nul, point_lose)
     
-    def ajouterEquipe(self):
+    # EQUIPE ###########################################
+    def creerEquipe(self):
         equipe = Equipe(self.idEquipe, str(input("Nom de l'équipe : ")), str(input("Date de création : ")), str(input("Stade : ")), str(input("Entraineur : ")), str(input("Président : ")))
         self.idEquipe += 1
         
         championnat = str(input("nom du championnat"))
-        if championnat == self.rechercheChampionnat():
-            self.championnats.append(equipe)
+        
+        championnatIndex = self.rechercheChampionnat(championnat) 
+        if championnatIndex != None:
+            self.ajouterEquipe(equipe, championnatIndex)
         else:
             print("Championnat inexistant")
-        
-    def rechercheChampionnat(self, nomChampionnat):
-        for championnat in self.championnats:
-            if championnat.nom == nomChampionnat:
-                return True
-        return False
-        
-    def ajouterMatch(self):
+               
+    def ajouterEquipe(self, equipe, championnatIndex):
+            self.championnats[championnatIndex].equipes.append(equipe)        
+    ###########################################
+    
+    # MATCH ###########################################  
+    def creerMatch(self):
         match = Match(self.idMatch, str(input("Nom du match : ")), str(input("Date du match : ")), str(input("Heure du match : ")), str(input("Lieu du match : ")), str(input("Equipe domicile : ")), str(input("Equipe extérieur : ")), str(input("Score : ")))
         self.idMatch += 1
         
         championnat = str(input("nom du championnat"))
-        if championnat == self.rechercheChampionnat():
-            self.championnats.append(championnat)
+        
+        championnatIndex = self.rechercheChampionnat(championnat) 
+        if championnatIndex != None:
+            self.ajouterMatch(match, championnatIndex)
         else:
             print("Championnat inexistant")
-
+        
+    def ajouterMatch(self, match, championnatIndex):
+        self.championnats[championnatIndex].matchs.append(match)   
+    ###########################################
+    
+    # retourne index du championnat et si pas trouvé retourne none
+    def rechercheChampionnat(self, nomChampionnat):
+        i = 0
+        for championnat in self.championnats:
+            if championnat.nom == nomChampionnat:
+                return i
+            i += 1
+        return None
 
     #affiche equipes pour un championna précis
     def afficherEquipes(self, nomChampionnat):

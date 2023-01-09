@@ -1,3 +1,6 @@
+from match import Match
+from equipe import Equipe
+
 class Championnat:
 
     def __init__(self, id, nom, date_debut, date_fin, point_gagne, point_perdu, point_nul, type_classement):
