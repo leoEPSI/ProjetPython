@@ -89,18 +89,62 @@ class GestionChampionnat:
             print(championnat.afficher())
         print("")
 
-gestion = GestionChampionnat()
-choix = 0
+#TESTS
+#CHAMPINNAT****************
+championnat = GestionChampionnat()
+championnat1 = championnat.ajouterChampionnat("Coupe du monde 2002", "France", 987, 3, 2, 1)
+championnat2 = championnat.ajouterChampionnat("Coupe du monde 2006", "Maroc", 97, 3, 2, 1)
+championnat3 = championnat.ajouterChampionnat("Coupe d'Europe 2008", "Angleterre", 9, 3, 2, 1)
 
-while choix != 5:
-    gestion.menu()
-    choix = int(input("Choix : "))
+equipe1 = Equipe("ST", "13/02/1987", "Stade 1", "Bruno", "Leo")
+equipe2 = Equipe("OL", "05/09/1977", "Stade 2", "Theo", "Lucas")
+equipe3 = Equipe("OM", "16/01/2002", "Stade 3", "Rayan", "Leon")
+equipe4 = Equipe("PSG", "18/10/1995", "Stade 4", "Fred", "Marie Curie")
 
-    if choix == 1:
-        gestion.afficherChampionnat()
-    elif choix == 2:
-        gestion.ajouterChampionnat()
-    elif choix == 3:
-        gestion.ajouterEquipe()
-    elif choix == 4:
-        gestion.ajouterMatch()
+championnat1 = championnat.ajouterEquipe(equipe1)
+championnat1 = championnat.ajouterEquipe(equipe2)
+championnat2 = championnat.ajouterEquipe(equipe3)
+championnat2 = championnat.ajouterEquipe(equipe4)
+championnat3 = championnat.ajouterEquipe(equipe3)
+championnat3 = championnat.ajouterEquipe(equipe1)
+
+match1 = Match(15, 2, 1, equipe1, equipe2)
+match2 = Match(2, 2, 1, equipe2, equipe1)
+match3 = Match(3, 2, 1, equipe3, equipe4)
+match4 = Match(1, 2, 1, equipe4, equipe3)
+match5 = Match(1, 1, 1, equipe3, equipe1)
+match6 = Match(1, 3, 1, equipe1, equipe3)
+
+championnat1 = championnat.ajouterMatch(match1)
+championnat1 = championnat.ajouterMatch(match2)
+championnat2 = championnat.ajouterMatch(match3)
+championnat2 = championnat.ajouterMatch(match4)
+championnat3 = championnat.ajouterMatch(match5)
+championnat3 = championnat.ajouterMatch(match6)
+
+championnat.afficherChampionnat()
+
+championnat.afficherClassement("Coupe du monde 2002")
+championnat.afficherClassement("Coupe du monde 2006")
+championnat.afficherClassement("Coupe d'Europe 2008")
+
+championnat.afficherEquipes("Coupe du monde 2002")
+championnat.afficherEquipes("Coupe du monde 2006")
+championnat.afficherEquipes("Coupe d'Europe 2008")
+
+# championnat.ajouterEquipe()
+# gestion = GestionChampionnat()
+# choix = 0
+
+# while choix != 5:
+#     gestion.menu()
+#     choix = int(input("Choix : "))
+
+#     if choix == 1:
+#         gestion.afficherChampionnat()
+#     elif choix == 2:
+#         gestion.ajouterChampionnat()
+#     elif choix == 3:
+#         gestion.ajouterEquipe()
+#     elif choix == 4:
+#         gestion.ajouterMatch()
