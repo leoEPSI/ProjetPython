@@ -16,11 +16,15 @@ class GestionChampionnat:
         
     def ajouterMatch(self, match):
         self.championnats.append(match)
-        
-    def afficherEquipes(self):
-        for equipe in self.championnats:
-            equipe.afficher()
+
+    #affiche equipes pour un championna précis
+    def afficherEquipes(self, nomChampionnat):
+        for championnat in self.championnats:
+            if championnat.nom == nomChampionnat:
+                for equipe in championnat.equipes:
+                    equipe.afficher()
             
-    def afficherClassement(self):
-        for equipe in self.championnats:
-            equipe.afficher()
+    def afficherClassement(self, nomChampionnat):
+        for championnat in self.championnats:
+            if championnat.nom == nomChampionnat:
+                championnat.afficher_classement()
