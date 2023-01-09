@@ -5,6 +5,7 @@ from match import Match
 class GestionChampionnat:
     idEquipe = 0
     idMatch = 0
+    idChampionnat = 0
     
     def __init__(self):
         self.championnats = []
@@ -16,15 +17,15 @@ class GestionChampionnat:
         print("4. Ajouter un match à un championnat")
         print("5. Quitter")
     
-    def ajouterChampionnat(self, championnat):
-        nom = str(input("Nom du championnat : "))
-        pays = str(input("Pays du championnat : "))
-        nb_equipes = int(input("Nombre d'équipes : "))
-        point_win = int(input("Points pour une victoire : "))
-        point_nul = int(input("Points pour un match nul : "))
-        point_lose = int(input("Points pour une défaite : "))
+    # CHAMPIONNAT ###########################################
+    def creerChampionnat(self):
+        championnat = Championnat(self.idChampionnat, str(input("Nom du championnat : ")), str(input("Date de début : ")), str(input("Date de fin : ")), str(input("Point gagné : ")), str(input("Point perdu : ")), str(input("Point nul : ")), str(input("Type de classement : ")))
+        self.idChampionnat += 1
+        self.ajouterChampionnat(championnat)
+        
+    def ajouterChampionnat(self,championnat):
         self.championnats.append(championnat)
-        print(nom, pays, nb_equipes, point_win, point_nul, point_lose)
+        
     
     # EQUIPE ###########################################
     def creerEquipe(self):
@@ -38,7 +39,7 @@ class GestionChampionnat:
             self.ajouterEquipe(equipe, championnatIndex)
         else:
             print("Championnat inexistant")
-               
+
     def ajouterEquipe(self, equipe, championnatIndex):
             self.championnats[championnatIndex].equipes.append(equipe)        
     ###########################################
