@@ -9,13 +9,21 @@ class GestionChampionnat:
         print("3. Quitter")
     
     def ajouterChampionnat(self, championnat, nom, pays, nb_equipes, point_win, point_nul, point_lose, ex_aequo):
+        self.nom = nom
+        self.pays = pays
+        self.nb_equipes = nb_equipes
+        self.point_win = point_win
+        self.point_nul = point_nul
+        self.point_lose = point_lose
+        self.ex_aequo = ex_aequo
         self.championnats.append(championnat)
-        self.nom = str(input("Nom du championnat : "))
-        self.pays = str(input("Pays du championnat : "))
-        self.nb_equipes = int(input("Nombre d'équipes : "))
-        self.point_win = int(input("Points pour une victoire : "))
-        self.point_nul = int(input("Points pour un match nul : "))
-        self.point_lose = int(input("Points pour une défaite : "))
+        nom = str(input("Nom du championnat : "))
+        pays = str(input("Pays du championnat : "))
+        nb_equipes = int(input("Nombre d'équipes : "))
+        point_win = int(input("Points pour une victoire : "))
+        point_nul = int(input("Points pour un match nul : "))
+        point_lose = int(input("Points pour une défaite : "))
+        print(nom, pays, nb_equipes, point_win, point_nul, point_lose)
     
     def ajouterEquipe(self, equipe):
         self.championnats.append(equipe)
