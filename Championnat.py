@@ -41,7 +41,7 @@ class Championnat:
         
         
     def calculer_point(self):
-        
+        print("")
         
     def ajouterEquipe(self, equipe):
         self.equipes.append(equipe)
