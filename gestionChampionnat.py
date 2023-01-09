@@ -1,13 +1,15 @@
 from equipe import Equipe
 from Championnat import Championnat
+from match import Match
 
 class GestionChampionnat:
     idEquipe = 0
+    idMatch = 0
     
     def __init__(self):
         self.championnats = []
         
-    def menu():
+    def menu(self):
         print("1. Afficher les championnats")
         print("2. Ajouter un championnat")
         print("3. Ajouter une équipe à un championnat")
@@ -27,9 +29,9 @@ class GestionChampionnat:
     def ajouterEquipe(self):
         equipe = Equipe(self.idEquipe, str(input("Nom de l'équipe : ")), str(input("Date de création : ")), str(input("Stade : ")), str(input("Entraineur : ")), str(input("Président : ")))
         self.idEquipe += 1
-        championna = str(input("nom du championnat"))
-    
-        if championna == self.rechercheChampionnat():
+        
+        championnat = str(input("nom du championnat"))
+        if championnat == self.rechercheChampionnat():
             self.championnats.append(equipe)
         else:
             print("Championnat inexistant")
@@ -40,8 +42,16 @@ class GestionChampionnat:
                 return True
         return False
         
-    def ajouterMatch(self, match):
-        self.championnats.append(match)
+    def ajouterMatch(self):
+        match = Match(self.idMatch, str(input("Nom du match : ")), str(input("Date du match : ")), str(input("Heure du match : ")), str(input("Lieu du match : ")), str(input("Equipe domicile : ")), str(input("Equipe extérieur : ")), str(input("Score : ")))
+        self.idMatch += 1
+        
+        championnat = str(input("nom du championnat"))
+        if championnat == self.rechercheChampionnat():
+            self.championnats.append(championnat)
+        else:
+            print("Championnat inexistant")
+
 
     #affiche equipes pour un championna précis
     def afficherEquipes(self, nomChampionnat):
@@ -57,19 +67,23 @@ class GestionChampionnat:
                 championnat.afficher_classement()
 
     def afficherChampionnat(self):
+        print("Liste des championnats : ")
         for championnat in self.championnats:
-            print(championnat)
+            print(championnat.afficher())
+        print("")
 
-    choix = 0
-    while choix != 5:
-        menu()
-        choix = int(input("Choix : "))
+gestion = GestionChampionnat()
+choix = 0
 
-        if choix == 1:
-            afficherChampionnat()
-        elif choix == 2:
-            ajouterChampionnat()
-        elif choix == 3:
-            ajouterEquipe()
-        elif choix == 4:
-            ajouterMatch()
+while choix != 5:
+    gestion.menu()
+    choix = int(input("Choix : "))
+
+    if choix == 1:
+        gestion.afficherChampionnat()
+    elif choix == 2:
+        gestion.ajouterChampionnat()
+    elif choix == 3:
+        gestion.ajouterEquipe()
+    elif choix == 4:
+        gestion.ajouterMatch()
