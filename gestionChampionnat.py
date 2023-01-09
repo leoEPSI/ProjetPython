@@ -1,6 +1,6 @@
 class GestionChampionnat:
     
-    def __init__(self, nom, pays, nb_equipes, point_win, point_nul, point_lose, ex_aequo):
+    def __init__(self):
         self.championnats = []
         
     def menu():
@@ -10,7 +10,14 @@ class GestionChampionnat:
         print("4. Ajouter un match à un championnat")
         print("5. Quitter")
     
-    def ajouterChampionnat(self, championnat):
+    def ajouterChampionnat(self, championnat, nom, pays, nb_equipes, point_win, point_nul, point_lose, ex_aequo):
+        self.nom = nom
+        self.pays = pays
+        self.nb_equipes = nb_equipes
+        self.point_win = point_win
+        self.point_nul = point_nul
+        self.point_lose = point_lose
+        self.ex_aequo = ex_aequo
         self.championnats.append(championnat)
         nom = str(input("Nom du championnat : "))
         pays = str(input("Pays du championnat : "))
