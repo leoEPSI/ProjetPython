@@ -3,7 +3,7 @@ from equipe import Equipe
 class GestionChampionnat:
     idEquipe = 0
     
-    def __init__(self, nom, pays, nb_equipes, point_win, point_nul, point_lose, ex_aequo):
+    def __init__(self):
         self.championnats = []
         
     def menu():
