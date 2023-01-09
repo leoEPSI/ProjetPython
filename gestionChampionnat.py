@@ -70,6 +70,7 @@ class GestionChampionnat:
     def afficherEquipes(self, nomChampionnat):
         for championnat in self.championnats:
             if championnat.nom == nomChampionnat:
+                print("Championnat :", championnat.id, "-", championnat.nom)
                 for equipe in championnat.equipes:
                     equipe.afficher()
             
@@ -78,18 +79,19 @@ class GestionChampionnat:
         for championnat in self.championnats:
             if championnat.nom == nomChampionnat:
                 championnat.afficher_classement()
+        print("")    
 
     def afficherChampionnat(self):
         print("============================")
         print("Liste des championnats : ")
         print("============================")
         for championnat in self.championnats:
-            print(championnat.afficher())
+            if championnat.afficher() != None:
+                print(championnat.afficher())
 
 #TESTS
 #CHAMPINNAT****************
 championnat = GestionChampionnat()
-# id, nom, date_debut, date_fin, point_gagne, point_perdu, point_nul, type_classement):
 championnat1 = Championnat(1, "Coupe du monde 2002", "13/04/2002", "13/05/2002", 71, 45, 10, 1)
 championnat2 = Championnat(2, "Coupe du monde 2006", "02/07/2006", "02/08/2006", 67, 65, 8, 2)
 championnat3 = Championnat(3, "Coupe d'Europe 2008", "25/10/2008", "25/11/2008", 55, 63, 15, 3)
