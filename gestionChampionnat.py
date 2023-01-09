@@ -1,4 +1,5 @@
 from equipe import Equipe
+from Championnat import Championnat
 from match import Match
 
 class GestionChampionnat:
@@ -16,13 +17,13 @@ class GestionChampionnat:
         print("5. Quitter")
     
     def ajouterChampionnat(self, championnat):
-        self.championnats.append(championnat)
         nom = str(input("Nom du championnat : "))
         pays = str(input("Pays du championnat : "))
         nb_equipes = int(input("Nombre d'équipes : "))
         point_win = int(input("Points pour une victoire : "))
         point_nul = int(input("Points pour un match nul : "))
         point_lose = int(input("Points pour une défaite : "))
+        self.championnats.append(championnat)
         print(nom, pays, nb_equipes, point_win, point_nul, point_lose)
     
     # EQUIPE ###########################################
