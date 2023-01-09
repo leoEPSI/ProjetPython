@@ -59,7 +59,6 @@ class Championnat:
         point += equipe.mPerdu * self.point_perdu
         return point
         
-        
     def ajouterEquipe(self, equipe):
         self.equipes.append(equipe)
         
