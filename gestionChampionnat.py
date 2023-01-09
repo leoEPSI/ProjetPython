@@ -4,9 +4,11 @@ class GestionChampionnat:
         self.championnats = []
         
     def menu(self):
-        print("1. Ajouter un championnat")
-        print("2. Afficher les championnats")
-        print("3. Quitter")
+        print("1. Afficher les championnats")
+        print("2. Ajouter un championnat")
+        print("3. Ajouter une équipe à un championnat")
+        print("4. Ajouter un match à un championnat")
+        print("5. Quitter")
     
     def ajouterChampionnat(self, championnat, nom, pays, nb_equipes, point_win, point_nul, point_lose, ex_aequo):
         self.nom = nom
@@ -43,3 +45,29 @@ class GestionChampionnat:
         for championnat in self.championnats:
             if championnat.nom == nomChampionnat:
                 championnat.afficher_classement()
+
+    def afficherChampionnat(self):
+        for championnat in self.championnats:
+            print(championnat)
+        
+    def afficherEquipes(self):
+        for equipe in self.championnats:
+            equipe.afficher()
+            
+    def afficherClassement(self):
+        for equipe in self.championnats:
+            equipe.afficher()
+
+    choix = 0
+    while choix != 7:
+        menu()
+        choix = int(input("Choix : "))
+
+        if choix == 1:
+            afficherChampionnat()
+        elif choix == 2:
+            ajouterChampionnat()
+        elif choix == 3:
+            ajouterEquipe()
+        elif choix == 4:
+            ajouterMatch()
