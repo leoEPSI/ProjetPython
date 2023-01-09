@@ -30,6 +30,7 @@ class GestionChampionnat:
                 for equipe in championnat.equipes:
                     equipe.afficher()
             
+    #affiche le classement pour un championnat précis
     def afficherClassement(self, nomChampionnat):
         for championnat in self.championnats:
             if championnat.nom == nomChampionnat:
