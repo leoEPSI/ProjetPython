@@ -20,7 +20,7 @@ class GestionChampionnat:
     
     # CHAMPIONNAT ###########################################
     def creerChampionnat(self):
-        championnat = Championnat(self.idChampionnat, str(input("Nom du championnat : ")), str(input("Date de début : ")), str(input("Date de fin : ")), str(input("Point gagné : ")), str(input("Point perdu : ")), str(input("Point nul : ")), str(input("Type de classement : ")))
+        championnat = Championnat(self.idChampionnat, str(input("Nom du championnat : ")), str(input("Date de début : ")), str(input("Date de fin : ")), int(input("Point gagné : ")), int(input("Point perdu : ")), int(input("Point nul : ")), int(input("Type de classement : ")))
         self.idChampionnat += 1
         self.ajouterChampionnat(championnat)
         
@@ -45,7 +45,7 @@ class GestionChampionnat:
     
     # MATCH ###########################################  
     def creerMatch(self):
-        match = Match(self.idMatch, str(input("Nom du match : ")), str(input("Date du match : ")), str(input("Heure du match : ")), str(input("Lieu du match : ")), str(input("Equipe domicile : ")), str(input("Equipe extérieur : ")), str(input("Score : ")))
+        match = Match(self.idMatch, int(input("Score de l'équipe 1 : ")), int(input("Score de l'équipe 2 : ")), str(input("Numéro de journée (1) : ")), str(input("Equipe 1 : ")), str(input("Equipe 2 : ")))
         self.idMatch += 1
         
         championnat = str(input("Nom du championnat : "))
