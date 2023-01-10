@@ -104,41 +104,37 @@ equipe1 = Equipe(1, "ST", "13/02/1987", "Stade 1", "Bruno", "Leo")
 equipe2 = Equipe(2, "OL", "05/09/1977", "Stade 2", "Theo", "Lucas")
 equipe3 = Equipe(3, "OM", "16/01/2002", "Stade 3", "Rayan", "Leon")
 equipe4 = Equipe(4, "PSG", "18/10/1995", "Stade 4", "Fred", "Marie Curie")
+equipe5 = Equipe(5, "OM2", "16/01/2002", "Stade 3", "Rayan2", "Leon2")
+equipe6 = Equipe(6, "OM3", "16/01/2002", "Stade 3", "Rayan3", "Leon3")
 
 championnat1.ajouterEquipe(equipe1)
 championnat1.ajouterEquipe(equipe2)
+championnat1.ajouterEquipe(equipe5)
+championnat1.ajouterEquipe(equipe6)
 championnat2.ajouterEquipe(equipe3)
 championnat2.ajouterEquipe(equipe4)
 championnat3.ajouterEquipe(equipe3)
 championnat3.ajouterEquipe(equipe1)
-"""
-championnat.ajouterEquipe(equipe1, championnat1)
-championnat.ajouterEquipe(equipe2, championnat1)
-championnat.ajouterEquipe(equipe3, championnat2)
-championnat.ajouterEquipe(equipe4, championnat2)
-championnat.ajouterEquipe(equipe3, championnat3)
-championnat.ajouterEquipe(equipe1, championnat3)
-"""
+
 match1 = Match(1, 2, 1, equipe1, equipe2)
 match2 = Match(2, 2, 1, equipe2, equipe1)
 match3 = Match(3, 2, 1, equipe3, equipe4)
 match4 = Match(1, 2, 1, equipe4, equipe3)
 match5 = Match(1, 1, 1, equipe3, equipe1)
 match6 = Match(1, 3, 1, equipe1, equipe3)
+match7 = Match(1, 3, 1, equipe5, equipe6)
+match8 = Match(2, 3, 1, equipe2, equipe5)
+
 
 championnat1.ajouterMatch(match1)
 championnat1.ajouterMatch(match2)
+championnat1.ajouterMatch(match7)
+championnat1.ajouterMatch(match8)
 championnat2.ajouterMatch(match3)
 championnat2.ajouterMatch(match4)
 championnat3.ajouterMatch(match5)
 championnat3.ajouterMatch(match6)
-"""
-championnat1 = championnat.ajouterMatch(match2)
-championnat2 = championnat.ajouterMatch(match3)
-championnat2 = championnat.ajouterMatch(match4)
-championnat3 = championnat.ajouterMatch(match5)
-championnat3 = championnat.ajouterMatch(match6)
-"""
+
 championnat.afficherChampionnat()
 
 championnat.afficherClassement("Coupe du monde 2002")

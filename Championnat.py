@@ -42,12 +42,13 @@ class Championnat:
         for equipe in self.equipes:
             tableauEquipe.append([equipe, self.calculer_point(equipe)])
         
-        sortedTableauEquipe = sorted(tableauEquipe, key=operator.itemgetter(1), reverse=True)
+        self.sortedEquipe(tableauEquipe)
+        #sorted(tableauEquipe, key=operator.itemgetter(1), reverse=True)
         
         print("Classement")
         print("\t\t Pts \t Joués \t Gagné \t Nul \t Perdu")
-        for equipe in sortedTableauEquipe:
-            self.afficherEquipePoint(equipe[0], sortedTableauEquipe.index(equipe) + 1)
+        for equipe in tableauEquipe:
+            self.afficherEquipePoint(equipe[0], tableauEquipe.index(equipe) + 1)
     
     def afficherEquipePoint(self, equipe, classement):
         print(str(classement), equipe.nom +"\t\t"+ str(self.calculer_point(equipe)) +"\t"+ str(self.calculer_match_joue(equipe)) +"\t"+ str(equipe.mGagne) +"\t"+ str(equipe.mNul) +"\t"+ str(equipe.mPerdu))
@@ -65,4 +66,34 @@ class Championnat:
     def ajouterEquipe(self, equipe):
         self.equipes.append(equipe)
         
-    
+    def sortedEquipe(self,tableauEquipe):
+        #pour chaque case du tableau
+        for i in range(0, len(tableauEquipe)):
+            #pour chaque case du tableau après la case i
+            for j in range(i + 1, len(tableauEquipe)):
+                if tableauEquipe[i][1] != tableauEquipe[j][1]:
+                    if tableauEquipe[i][1] < tableauEquipe[j][1]:
+                        temp = tableauEquipe[i]
+                        tableauEquipe[i] = tableauEquipe[j]
+                        tableauEquipe[j] = temp
+                else:
+                    equip1 = tableauEquipe[i][0]
+                    equip2 = tableauEquipe[j][0]
+                    nbrBut1 = 0
+                    nbrBut2 = 0
+
+                    for match in self.matchs:
+                        if match.equipe1.id == equip1.id :
+                            nbrBut1 += match.score_equipe1
+                        if match.equipe2.id == equip1.id :
+                            nbrBut1 += match.score_equipe2
+                        if match.equipe1.id == equip2.id :
+                            nbrBut2 += match.score_equipe1
+                        if match.equipe2.id == equip2.id :
+                            nbrBut2 += match.score_equipe2
+                    
+                    print(equip1.nom, nbrBut1, equip2.nom,nbrBut2)
+                    if nbrBut1 < nbrBut2:
+                        temp = tableauEquipe[i]
+                        tableauEquipe[i] = tableauEquipe[j]
+                        tableauEquipe[j] = temp
