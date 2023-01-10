@@ -50,7 +50,7 @@ class Championnat:
             self.afficherEquipePoint(equipe[0], tableauEquipe.index(equipe) + 1)
     
     def afficherEquipePoint(self, equipe, classement):
-        print(str(classement), equipe.nom, self.calculer_point(equipe), equipe.mJoue, equipe.mGagne, equipe.mNul, equipe.mPerdu)
+        print(str(classement), equipe.nom, self.calculer_point(equipe), self.calculer_match_joue(equipe), equipe.mGagne, equipe.mNul, equipe.mPerdu)
         
     def calculer_point(self, equipe):
         point = 0
@@ -58,6 +58,9 @@ class Championnat:
         point += equipe.mNul * self.point_nul
         point += equipe.mPerdu * self.point_perdu
         return point
+    
+    def calculer_match_joue(self, equipe):
+        return equipe.mGagne + equipe.mNul + equipe.mPerdu
         
     def ajouterEquipe(self, equipe):
         self.equipes.append(equipe)
