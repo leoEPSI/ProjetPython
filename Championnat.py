@@ -42,12 +42,12 @@ class Championnat:
         for equipe in self.equipes:
             tableauEquipe.append([equipe, self.calculer_point(equipe)])
         
-        sorted(tableauEquipe, key=operator.itemgetter(1), reverse=True)
+        sortedTableauEquipe = sorted(tableauEquipe, key=operator.itemgetter(1), reverse=True)
         
         print("Classement")
         print("\t\t Pts \t Joués \t Gagné \t Nul \t Perdu")
-        for equipe in tableauEquipe:
-            self.afficherEquipePoint(equipe[0], tableauEquipe.index(equipe) + 1)
+        for equipe in sortedTableauEquipe:
+            self.afficherEquipePoint(equipe[0], sortedTableauEquipe.index(equipe) + 1)
     
     def afficherEquipePoint(self, equipe, classement):
         print(str(classement), equipe.nom +"\t\t"+ str(self.calculer_point(equipe)) +"\t"+ str(self.calculer_match_joue(equipe)) +"\t"+ str(equipe.mGagne) +"\t"+ str(equipe.mNul) +"\t"+ str(equipe.mPerdu))
