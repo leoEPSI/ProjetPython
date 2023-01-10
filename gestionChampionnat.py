@@ -11,6 +11,7 @@ class GestionChampionnat:
         self.championnats = []
         
     def menu(self):
+        print("Que voulez-vous faire ?")
         print("1. Afficher les championnats")
         print("2. Ajouter un championnat")
         print("3. Ajouter une équipe à un championnat")
@@ -32,7 +33,7 @@ class GestionChampionnat:
         equipe = Equipe(self.idEquipe, str(input("Nom de l'équipe : ")), str(input("Date de création : ")), str(input("Stade : ")), str(input("Entraineur : ")), str(input("Président : ")))
         self.idEquipe += 1
         
-        championnat = str(input("nom du championnat"))
+        championnat = str(input("Nom du championnat : "))
         
         championnatIndex = self.rechercheChampionnat(championnat) 
         if championnatIndex != None:
@@ -47,7 +48,7 @@ class GestionChampionnat:
         match = Match(self.idMatch, str(input("Nom du match : ")), str(input("Date du match : ")), str(input("Heure du match : ")), str(input("Lieu du match : ")), str(input("Equipe domicile : ")), str(input("Equipe extérieur : ")), str(input("Score : ")))
         self.idMatch += 1
         
-        championnat = str(input("nom du championnat"))
+        championnat = str(input("Nom du championnat : "))
         
         championnatIndex = self.rechercheChampionnat(championnat) 
         if championnatIndex != None:
