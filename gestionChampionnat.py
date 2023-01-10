@@ -92,9 +92,9 @@ class GestionChampionnat:
 #TESTS
 #CHAMPINNAT****************
 championnat = GestionChampionnat()
-championnat1 = Championnat(1, "Coupe du monde 2002", "13/04/2002", "13/05/2002", 71, 45, 10, 1)
-championnat2 = Championnat(2, "Coupe du monde 2006", "02/07/2006", "02/08/2006", 67, 65, 8, 2)
-championnat3 = Championnat(3, "Coupe d'Europe 2008", "25/10/2008", "25/11/2008", 55, 63, 15, 3)
+championnat1 = Championnat(1, "Coupe du monde 2002", "13/04/2002", "13/05/2002", 3, 0, 1, 1)
+championnat2 = Championnat(2, "Coupe du monde 2006", "02/07/2006", "02/08/2006", 3, 0, 1, 2)
+championnat3 = Championnat(3, "Coupe d'Europe 2008", "25/10/2008", "25/11/2008", 3, 0, 1, 3)
 
 championnat.ajouterChampionnat(championnat1)
 championnat.ajouterChampionnat(championnat2)
@@ -119,7 +119,7 @@ championnat.ajouterEquipe(equipe4, championnat2)
 championnat.ajouterEquipe(equipe3, championnat3)
 championnat.ajouterEquipe(equipe1, championnat3)
 """
-match1 = Match(15, 2, 1, equipe1, equipe2)
+match1 = Match(1, 2, 1, equipe1, equipe2)
 match2 = Match(2, 2, 1, equipe2, equipe1)
 match3 = Match(3, 2, 1, equipe3, equipe4)
 match4 = Match(1, 2, 1, equipe4, equipe3)
