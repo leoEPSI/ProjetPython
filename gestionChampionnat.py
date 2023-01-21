@@ -119,8 +119,9 @@ class GestionChampionnat:
         
     #affiche equipes pour un championna précis
     def afficherEquipesSaisie(self):
-        nomChampionnat = str(inputTestStr("Nom du championnat : "))
+        self.afficherChampionnat()
         try:
+            nomChampionnat = str(inputTestStr("Nom du championnat : "))
             championnatIndex = self.rechercheChampionnat(nomChampionnat)
         except:
             print("Erreur de saisie")
@@ -139,8 +140,9 @@ class GestionChampionnat:
         
     #affiche le classement pour un championnat précis
     def afficherClassementSaisie(self):
-        nomChampionnat = str(inputTestStr("Nom du championnat : "))
+        self.afficherChampionnat()
         try:
+            nomChampionnat = str(inputTestStr("Nom du championnat : "))
             championnatIndex = self.rechercheChampionnat(nomChampionnat)
         except:
             print("Erreur de saisie")
